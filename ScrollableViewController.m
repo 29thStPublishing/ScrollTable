@@ -85,20 +85,12 @@
 
     
     scrollView.contentSize =  canvasView.frame.size;
-
-        //CGSizeMake(imageView.frame.size.width / 2, imageView.frame.size.height / 2);
-  /*  scrollView.maximumZoomScale = 3.0;
-    scrollView.minimumZoomScale = 0.25;
-    scrollView.delegate = self;
-   */
     
     [scrollView setMinimumZoomScale:0.2];
     [scrollView setMaximumZoomScale:10];
     [scrollView setDelegate:self];
     
     scrollView.bounces = NO;
-
-//    [scrollView addSubview:imageView];
     
     self.view = scrollView;
 }
