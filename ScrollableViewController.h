@@ -8,14 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+@class CanvasView;
 
-//@interface ScrollableView : UIView {
-@interface ScrollableView : UIViewController <UIApplicationDelegate, UIScrollViewDelegate> {
+
+@interface ScrollableViewController : UIViewController <UIApplicationDelegate, UIScrollViewDelegate> {
     UIScrollView * scrollView;
+    CanvasView * canvasView;
     
 }   
 
 @property (nonatomic, retain) UIScrollView * scrollView;
+@property (nonatomic, retain) CanvasView * canvasView;
+
 -(id)initScrollableView;
 
 

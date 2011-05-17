@@ -7,7 +7,7 @@
 //
 
 #import "ScrollTableViewController.h"
-#import "ScrollableView.h"
+#import "ScrollableViewController.h"
 
 @implementation ScrollTableViewController
 
@@ -28,7 +28,7 @@
 -(void)displayGridView:(id) sender {
     NSLog(@"[ScrollTableViewController::displayGridView]\n");
     
-    ScrollableView * scrollableView = [[ScrollableView alloc] initScrollableView];
+    ScrollableViewController * scrollableView = [[ScrollableViewController alloc] initScrollableView];
     [self.navigationController pushViewController:scrollableView animated:YES];
     
     [scrollableView release];

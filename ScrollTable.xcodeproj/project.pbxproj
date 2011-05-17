@@ -16,8 +16,9 @@
 		9688BC571381C6AA004FA63A /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9688BC551381C6AA004FA63A /* MainWindow.xib */; };
 		9688BC5A1381C6AA004FA63A /* ScrollTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9688BC591381C6AA004FA63A /* ScrollTableViewController.m */; };
 		9688BC5D1381C6AA004FA63A /* ScrollTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9688BC5B1381C6AA004FA63A /* ScrollTableViewController.xib */; };
-		9688BC6D1381C8AA004FA63A /* ScrollableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9688BC6C1381C8AA004FA63A /* ScrollableView.m */; };
+		9688BC6D1381C8AA004FA63A /* ScrollableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9688BC6C1381C8AA004FA63A /* ScrollableViewController.m */; };
 		9688BC6F1381CD35004FA63A /* twinpeaks28.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9688BC6E1381CD35004FA63A /* twinpeaks28.jpg */; };
+		96FCC27E1382F83100FC4BA0 /* CanvasView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FCC27D1382F83100FC4BA0 /* CanvasView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,9 +36,11 @@
 		9688BC581381C6AA004FA63A /* ScrollTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollTableViewController.h; sourceTree = "<group>"; };
 		9688BC591381C6AA004FA63A /* ScrollTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScrollTableViewController.m; sourceTree = "<group>"; };
 		9688BC5C1381C6AA004FA63A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ScrollTableViewController.xib; sourceTree = "<group>"; };
-		9688BC6B1381C8AA004FA63A /* ScrollableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScrollableView.h; path = ../ScrollableView.h; sourceTree = "<group>"; };
-		9688BC6C1381C8AA004FA63A /* ScrollableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScrollableView.m; path = ../ScrollableView.m; sourceTree = "<group>"; };
+		9688BC6B1381C8AA004FA63A /* ScrollableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollableViewController.h; sourceTree = "<group>"; };
+		9688BC6C1381C8AA004FA63A /* ScrollableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollableViewController.m; sourceTree = "<group>"; };
 		9688BC6E1381CD35004FA63A /* twinpeaks28.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = twinpeaks28.jpg; sourceTree = "<group>"; };
+		96FCC27C1382F83100FC4BA0 /* CanvasView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasView.h; sourceTree = "<group>"; };
+		96FCC27D1382F83100FC4BA0 /* CanvasView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +60,11 @@
 		9688BC341381C6AA004FA63A = {
 			isa = PBXGroup;
 			children = (
+				96FCC2801382F83F00FC4BA0 /* CriticalViews */,
+				96FCC27C1382F83100FC4BA0 /* CanvasView.h */,
+				96FCC27D1382F83100FC4BA0 /* CanvasView.m */,
+				9688BC6B1381C8AA004FA63A /* ScrollableViewController.h */,
+				9688BC6C1381C8AA004FA63A /* ScrollableViewController.m */,
 				9688BC6E1381CD35004FA63A /* twinpeaks28.jpg */,
 				9688BC491381C6AA004FA63A /* ScrollTable */,
 				9688BC421381C6AA004FA63A /* Frameworks */,
@@ -91,8 +99,6 @@
 				9688BC581381C6AA004FA63A /* ScrollTableViewController.h */,
 				9688BC591381C6AA004FA63A /* ScrollTableViewController.m */,
 				9688BC5B1381C6AA004FA63A /* ScrollTableViewController.xib */,
-				9688BC6B1381C8AA004FA63A /* ScrollableView.h */,
-				9688BC6C1381C8AA004FA63A /* ScrollableView.m */,
 				9688BC4A1381C6AA004FA63A /* Supporting Files */,
 			);
 			path = ScrollTable;
@@ -107,6 +113,13 @@
 				9688BC501381C6AA004FA63A /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		96FCC2801382F83F00FC4BA0 /* CriticalViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = CriticalViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,7 +189,8 @@
 				9688BC511381C6AA004FA63A /* main.m in Sources */,
 				9688BC541381C6AA004FA63A /* ScrollTableAppDelegate.m in Sources */,
 				9688BC5A1381C6AA004FA63A /* ScrollTableViewController.m in Sources */,
-				9688BC6D1381C8AA004FA63A /* ScrollableView.m in Sources */,
+				9688BC6D1381C8AA004FA63A /* ScrollableViewController.m in Sources */,
+				96FCC27E1382F83100FC4BA0 /* CanvasView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +305,7 @@
 				9688BC621381C6AA004FA63A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

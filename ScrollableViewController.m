@@ -6,12 +6,12 @@
 //  Copyright 2011 Auburn & Ivory. All rights reserved.
 //
 
-#import "ScrollableView.h"
+#import "ScrollableViewController.h"
+#import "CanvasView.h"
 
+@implementation ScrollableViewController
 
-@implementation ScrollableView
-
-@synthesize scrollView;
+@synthesize scrollView, canvasView;
 
 
 -(id)initScrollableView {
@@ -19,13 +19,13 @@
     
     self = [super init];
     if (self) {
-        scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 200.0, 200.0)];
-        [self.view addSubview:scrollView];
-                      
+        // Create the view!
+        
     }
     return self;
 }
 
+/*
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -34,9 +34,11 @@
     }
     return self;
 }
+ */
 
 - (void)dealloc
 {
+    [canvasView release];
     [scrollView release];
     [super dealloc];
 }
@@ -53,14 +55,56 @@
 
 #pragma mark - View lifecycle
 
-/*
+
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
 - (void)loadView
 {
+    [super loadView];
+    
+    //CGRect wholeWindow = [window bounds];
+    
+    CGRect bounds = [[UIScreen mainScreen] applicationFrame];
+    
+    scrollView = [[UIScrollView alloc] initWithFrame:bounds];
+    
+    // Make a view twice as large as the window
+    CGRect reallyBigRect;
+    
+    // Do math here to get actual size out
+    // even without forced aspect, we should have a max width & height for these images
+    reallyBigRect.origin = CGPointZero;
+    reallyBigRect.size.width = bounds.size.width * 2.0;
+    reallyBigRect.size.height = bounds.size.height * 2.0;
+    [scrollView setContentSize:reallyBigRect.size];
+    
+    canvasView = [[CanvasView alloc] initWithFrame:reallyBigRect];
+
+    [canvasView setBackgroundColor:[UIColor clearColor]];
+    [scrollView addSubview:canvasView];
+    
+
+    
+    scrollView.contentSize =  canvasView.frame.size;
+
+        //CGSizeMake(imageView.frame.size.width / 2, imageView.frame.size.height / 2);
+  /*  scrollView.maximumZoomScale = 3.0;
+    scrollView.minimumZoomScale = 0.25;
+    scrollView.delegate = self;
+   */
+    
+    [scrollView setMinimumZoomScale:0.2];
+    [scrollView setMaximumZoomScale:10];
+    [scrollView setDelegate:self];
+    
+    scrollView.bounces = NO;
+
+//    [scrollView addSubview:imageView];
+    
+    self.view = scrollView;
 }
-*/
 
 
+/*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
@@ -74,10 +118,9 @@
     [self.view addSubview:imgView];
     
     [imgView release];
-    
-
 
 }
+ */
 
 
 - (void)viewDidUnload
